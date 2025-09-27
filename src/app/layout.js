@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import imgMeta from "../component/image/metaimage.jpg";
 import "./globals.css";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export const metadata = {
     siteName: "Screenshot App",
     images: [
       {
-        url: imgMeta, // картинка в папке public/
+        url: imgMeta.src, // картинка в папке public/
         width: 1200,
         height: 630,
         alt: "Screenshot preview",
@@ -35,7 +36,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Screenshot Viewer & Sharing App",
     description: "View screenshots and share them with friends.",
-    images: [imgMeta], // та же картинка
+    images: [imgMeta.src], // та же картинка
   },
 };
 

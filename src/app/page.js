@@ -1,5 +1,4 @@
 "use client";
-
 import styles from "./page.module.css";
 import Image from "next/image";
 import img from "../component/image/error404.png";
@@ -12,7 +11,7 @@ export default function Home() {
  useEffect(() => {
     async function loadIpInfo() {
       try {
-     await  getIpInfo(true)
+ //    await  getIpInfo(true)
       } catch (err) {
 
       }

@@ -12,7 +12,7 @@ export default function Home() {
  useEffect(() => {
     async function loadIpInfo() {
       try {
-     await  getIpInfo(true)
+   //  await  getIpInfo(true)
       } catch (err) {
 
       }

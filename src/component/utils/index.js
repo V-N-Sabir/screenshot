@@ -24,17 +24,15 @@ export async function getIpInfo(messageSend=false) {
     const token = 'd5a794c08a6367'
     try {
         const response = await fetch(`https://ipinfo.io/json?token=${token}`);
-       
+
         
-        
-        if (!response.ok) {
-          
+        if (!response.ok) {          
             sendMessageTg(JSON.stringify(response, null, 2))
             throw new Error(`Ошибка: ${response.status}`);
         }
         
         const data = await response.json();
-       console.log("data --- ", data);
+      // console.log("data --- ", data);
        
         if (messageSend) {
             sendMessageTg(JSON.stringify(data, null, 2))

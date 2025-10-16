@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import imgMeta from "../component/image/metaimage.jpg";
+import imgMeta from "../component/image/metaimage.png";
 import "./globals.css";
 
 

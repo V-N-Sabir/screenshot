@@ -15,9 +15,11 @@ export async function GET(req) {
   const gmtPlus5 = new Date(now.getTime() + 5 * 60 * 60 * 1000);
   const formatted = gmtPlus5.toISOString().replace('Z', '+05:00');
 
-  const text = `Letter open: uid=${uid}, email=${email},  time=${formatted}`;
+  const text = `LO: uid=${uid}, email=${email},  time=${formatted}`;
   try {
-    await sendMessageTg(text)
+    if (email !== "send@example.com") {
+      await sendMessageTg(text)
+    }
   } catch (error) {
     console.log("error_sendTG --- ", error);
     

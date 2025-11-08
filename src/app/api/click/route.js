@@ -1,5 +1,6 @@
 // src/app/api/click/route.js
 // http://localhost:3000/api/click?target=youtube123&email=send@example.com
+// https://screenshot-cyan-seven.vercel.app/api/click?target=youtube123&email=send@example.com
 
 import { NextResponse } from 'next/server'
 import sendMessageTg from '@/component/tg/sendMessageTg';
@@ -32,7 +33,7 @@ export async function GET(req) {
     }
 
       try {
-    if (email) { //email !== "send@example.com" & email
+    if (email !== "send@example.com" && email) {
       await sendMessageTg(text)
     }
   } catch (error) {

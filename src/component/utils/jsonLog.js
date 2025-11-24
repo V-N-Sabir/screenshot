@@ -37,3 +37,15 @@ export const getJsonValue = async () => {
      //data = JSON.parse(fileContent);
      return fileContent
 }
+
+
+export async function clearJsonLog() {
+  try {
+    // перезаписываем файл пустым массивом
+    await fs.writeFile(filePath, JSON.stringify([], null, 2), 'utf8');
+    return true;  // можно использовать как индикатор успеха
+  } catch (error) {
+    console.error("Ошибка очистки JSON файла:", error);
+    return false;
+  }
+}

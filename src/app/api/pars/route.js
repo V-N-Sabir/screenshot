@@ -1,4 +1,5 @@
 // http://localhost:3000/api/pars
+// https://screenshot-cyan-seven.vercel.app/api/pars
 import { getJsonValue } from '@/component/utils/jsonLog';
 import { NextResponse } from 'next/server';
 

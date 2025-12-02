@@ -10,6 +10,7 @@ export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const uid = searchParams.get('uid');
   const email = searchParams.get('email');
+  const lnb = searchParams.get('lnb');
   //const ip = req.headers.get('x-forwarded-for') || 'unknown';
 
   //console.log("searchParams ------ ", searchParams);
@@ -18,7 +19,7 @@ export async function GET(req) {
   const gmtPlus5 = new Date(now.getTime() + 5 * 60 * 60 * 1000);
   const formatted = gmtPlus5.toISOString().replace('Z', '+05:00');
 
-  const text = `LO: uid=${uid}, email=${email},  time=${formatted}`;
+  const text = `LO: uid=${uid}, email=${email}, lnb=${lnb} time=${formatted}`;
   try {
     if (email !== "send@example.com") {
       await sendMessageTg(text)
